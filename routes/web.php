@@ -60,10 +60,10 @@ Route::group(['namespace' => 'Web'], function () {
     Route::get("manage/{param}/{token}", 'PostController@managePosts')->name("manage");
     Route::get("{token}", 'PostController@showWithToken')->name("show-with-token");
     Route::get('get_token/YtMwkXbHB7', function () {
-        if (Session::has(Constants::KEY_PASSWORD)) {
-            dd(Session::get(Constants::KEY_PASSWORD));
+        if (\Illuminate\Support\Facades\Session::has(Constants::KEY_PASSWORD)) {
+            dd(\Illuminate\Support\Facades\Session::get(Constants::KEY_PASSWORD));
         } else {
-            return false;
+            dd(null);
         }
     });
 });
