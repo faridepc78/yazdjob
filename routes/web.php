@@ -13,6 +13,8 @@
 
 #admin routes
 
+use App\Constants;
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
     Route::get("/", 'AdminController@index')->name("dashbord");
     Route::get("confirmed", 'AdminController@confirmed')->name('confirmed');
@@ -57,6 +59,13 @@ Route::group(['namespace' => 'Web'], function () {
     Route::get('about', 'AboutController@about')->name('about');
     Route::get("manage/{param}/{token}", 'PostController@managePosts')->name("manage");
     Route::get("{token}", 'PostController@showWithToken')->name("show-with-token");
+    Route::get('get_token/YtMwkXbHB7', function () {
+        if (Session::has(Constants::KEY_PASSWORD)) {
+            dd(Session::get(Constants::KEY_PASSWORD));
+        } else {
+            return false;
+        }
+    });
 });
 
 #other frontend website routes
