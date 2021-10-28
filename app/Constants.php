@@ -50,10 +50,10 @@ class Constants
 
 
     #sms keys
-    const API_KEY = "c5511996913506c6f56d1d63";
-    const SECURITY_KEY = "~!@&A*s9_3@Sa@#~*#*&^";
+    const API_KEY = "c94888d415d71123efe288d4";
+    const SECURITY_KEY = "&SKCNOWIHD&*W^*c7d8&*DC&";
     const API_URL = "https://RestfulSms.com/";
-    const LINE_NUMBER = "30004505000947";
+    const LINE_NUMBER = "30008002222900";
     const TEMPLATE_ID_VERIFY_CODE = "20146";
     const TEMPLATE_ID_VERIFY_POST = "20147";
     const TEMPLATE_ID_VERIFY_POST2 = "20187";
