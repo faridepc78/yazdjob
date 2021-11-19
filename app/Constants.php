@@ -9,8 +9,6 @@ class Constants
     // zarinpal normal urls
     const  ZARINPAL_PURCHASE_URL = "https://www.zarinpal.com/pg/services/WebGate/wsdl";
     const  ZARINPAL_PAYMENT_URL = "https://www.zarinpal.com/pg/StartPay/";
-    const  ZARINPAL_MERCHANT_ID = "4ee964a8-108c-11ea-9151-000c295eb8fc";
-
     // web payment callback
     const  ZARINPAL_CALLBACK_URL = Constants::BASE_URL . "payment/verify/";
     // app payment callback
@@ -50,10 +48,7 @@ class Constants
 
 
     #sms keys
-    const API_KEY = "c94888d415d71123efe288d4";
-    const SECURITY_KEY = "&SKCNOWIHD&*W^*c7d8&*DC&";
     const API_URL = "https://RestfulSms.com/";
-    const LINE_NUMBER = "30008002222900";
     const TEMPLATE_ID_VERIFY_CODE = "20146";
     const TEMPLATE_ID_VERIFY_POST = "20147";
     const TEMPLATE_ID_VERIFY_POST2 = "20187";

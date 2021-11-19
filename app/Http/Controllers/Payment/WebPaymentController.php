@@ -21,7 +21,7 @@ class WebPaymentController extends Controller
         $description = Constants::STR_PAY_DESCRIPTION;
         $mobile = getPhone();
         $data = [
-            'MerchantID' =>Constants::ZARINPAL_MERCHANT_ID,
+            'MerchantID' =>env('ZARINPAL_MERCHANT_ID'),
             'Amount' => $amount,
             'Description' => $description,
             'Mobile' =>$mobile,
@@ -66,7 +66,7 @@ class WebPaymentController extends Controller
         $post = Post::find($postId);
         $payment = \App\Payment::where("post_id",$postId)->where("transaction_id",$authority)->get()->last();
         $data = [
-            'MerchantID' =>Constants::ZARINPAL_MERCHANT_ID,
+            'MerchantID' =>env('ZARINPAL_MERCHANT_ID'),
             'Amount' => $payment->amount,
             'Authority' =>$authority
         ];

@@ -36,7 +36,7 @@ class AppPaymentController extends Controller
 
         $description = Constants::STR_PAY_DESCRIPTION;
         $data = [
-            'MerchantID' => Constants::ZARINPAL_MERCHANT_ID,
+            'MerchantID' => env('ZARINPAL_MERCHANT_ID'),
             'Amount' => $amount,
             'Description' => $description,
             'Mobile' => $this->phone,
@@ -80,7 +80,7 @@ class AppPaymentController extends Controller
         $status = $request->Status;
         $payment = \App\Payment::where("post_id", $postId)->where("transaction_id", $authority)->get()->last();
         $data = [
-            'MerchantID' => Constants::ZARINPAL_MERCHANT_ID,
+            'MerchantID' => env('ZARINPAL_MERCHANT_ID'),
             'Amount' => $payment->amount,
             'Authority' => $authority
         ];

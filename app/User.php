@@ -50,13 +50,13 @@ class User extends Authenticatable
     public static function sendMessage($phone,$password)
     {
             $message = Constants::KEY_TEXT_MESSAGE .$password;
-            $sms = new Sms(Constants::API_KEY, Constants::SECURITY_KEY,Constants::API_URL,Constants::LINE_NUMBER);
+            $sms = new Sms(env('SMS_API_KEY'), env('SMS_SECURITY_KEY'),Constants::API_URL,env('SMS_LINE_NUMBER'));
             return $sms->sendMessage([$phone],[$message]);
     }
 
     public static function ultraFastSend($phone,$password)
     {
-        $sms = new Sms(Constants::API_KEY, Constants::SECURITY_KEY,Constants::API_URL);
+        $sms = new Sms(env('SMS_API_KEY'), env('SMS_SECURITY_KEY'),Constants::API_URL);
         return $sms->ultraFastSend($phone,$password,Constants::PARAMETER_VERIFY_CODE,Constants::TEMPLATE_ID_VERIFY_CODE);
     }
 
